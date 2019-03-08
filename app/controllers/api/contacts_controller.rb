@@ -18,8 +18,11 @@ class Api::ContactsController < ApplicationController
       email: params[:email], 
       phone_number: params[:phone_number]
       )
-    @contact.save
-    render 'show.json.jbuilder'
+    if @contact.save
+      render 'show.json.jbuilder'
+    else
+      render 'errors.json.jbuilder', status: :unprcessible_entity
+    end
   end
 
   def update
