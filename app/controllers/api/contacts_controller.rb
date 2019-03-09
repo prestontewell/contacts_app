@@ -33,8 +33,9 @@ class Api::ContactsController < ApplicationController
       middle_name: params[:middle_name] || @contact.middle_name,
       last_name: params[:last_name] || @contact.last_name,
       email: params[:email] || @contact.email,
-      phone_number: params[:phone_number]
+      phone_number: params[:phone_number] || @contact.phone_number
       )
+    @contact.save
     render 'show.json.jbuilder'
   end
 
