@@ -1,0 +1,1 @@
+json.message "This contact has been succesfully removed. That'll  be our little secret."
